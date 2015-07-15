@@ -12,6 +12,7 @@ namespace TestDotNetPF
     {
         static void Main(string[] args)
         {
+            // voorwerpen maken
             IVoorwerpen[] voorwerpen = new IVoorwerpen[3];
             voorwerpen[0] = new Boekenrek(2.15d, 0.95d, 50m);
 
