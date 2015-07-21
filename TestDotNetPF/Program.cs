@@ -16,11 +16,11 @@ namespace TestDotNetPF
             IVoorwerpen[] voorwerpen = new IVoorwerpen[3];
             voorwerpen[0] = new Boekenrek(2.15d, 0.95d, 50m);
 
-            Leesboek Boek = new Leesboek(new Genre { Leeftijd = 17 }, "titeltje", "auteurtje", 250m, "een onderwerp");
-            Woordenboek Woordenboek = new Woordenboek(new Genre { Leeftijd = 18 }, "titeltjeW", "auteurtjeW", 20m, "Nederlands-Engels");
+            Leesboek boek = new Leesboek(new Genre { Leeftijd = 17 }, "titeltje", "auteurtje", 250m, "een onderwerp");
+            Woordenboek woordenboek = new Woordenboek(new Genre { Leeftijd = 18 }, "titeltjeW", "auteurtjeW", 20m, "Nederlands-Engels");
 
-            voorwerpen[1] = Boek;
-            voorwerpen[2] = Woordenboek;
+            voorwerpen[1] = boek;
+            voorwerpen[2] = woordenboek;
 
             // print alle IVoorwerpen (gewoon lusje)
             Console.WriteLine("- gewoon lusje:");
@@ -36,12 +36,12 @@ namespace TestDotNetPF
 
             // print alle IVoorwerpen (delegate)
             Console.WriteLine("- delegate:");
-            Action<IVoorwerpen[]> ToonDeGegevenes = voorwerpDinges =>
+            Action<IVoorwerpen[]> toonDeGegevenes = voorwerpDinges =>
             {
                 foreach (IVoorwerpen voorwerpje in voorwerpDinges) if (voorwerpje != null)
                     { voorwerpje.GegevensTonen(); }
             };
-            ToonDeGegevenes(voorwerpen);
+            toonDeGegevenes(voorwerpen);
 
             PrintTussenLijn();
 

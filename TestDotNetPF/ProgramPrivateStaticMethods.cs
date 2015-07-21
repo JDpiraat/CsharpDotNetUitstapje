@@ -25,7 +25,7 @@ namespace TestDotNetPF
             // check negatieve aankoopprijs boek
             try
             {
-                Leesboek Boek2 = new Leesboek(new Genre { Leeftijd = 17 }, "titeltje", "auteurtje", -250m, "een onderwerp");
+                Leesboek boek2 = new Leesboek(new Genre { Leeftijd = 17 }, "titeltje", "auteurtje", -250m, "een onderwerp");
             }
             catch (NegatiefGetalException ex)
             {
@@ -35,7 +35,7 @@ namespace TestDotNetPF
             // check negatieve leeftijd
             try
             {
-                Woordenboek Woordenboek2 = new Woordenboek(new Genre { Leeftijd = -5 }, "titeltjeW", "auteurtjeW", 20m, "Nederlands-Engels");
+                Woordenboek woordenboek2 = new Woordenboek(new Genre { Leeftijd = -5 }, "titeltjeW", "auteurtjeW", 20m, "Nederlands-Engels");
             }
             catch (NegatiefGetalException ex)
             {
@@ -45,7 +45,7 @@ namespace TestDotNetPF
             // check negatieve aankoopprijs boekenrek
             try
             {
-                IVoorwerpen EenBoekerrekVoorwerp = new Boekenrek(2.15d, 0.95d, -50m);
+                IVoorwerpen eenBoekenrekVoorwerp = new Boekenrek(2.15d, 0.95d, -50m);
                 // check toegankelijkheid readonly property: da ga dus nie, joepi...?! : ((Boekenrek)EenBoekerrekVoorwerp).Breedte = 5d;
             }
             catch (NegatiefGetalException ex)
@@ -56,7 +56,7 @@ namespace TestDotNetPF
             // check lege Titel (Lees)Boek
             try
             {
-                Leesboek Boek2 = new Leesboek(new Genre { Leeftijd = 17 }, "   ", "auteurtje", 250m, "een onderwerp");
+                Leesboek boek3 = new Leesboek(new Genre { Leeftijd = 17 }, "   ", "auteurtje", 250m, "een onderwerp");
             }
             catch (ArgumentException ex)
             {
@@ -66,7 +66,7 @@ namespace TestDotNetPF
             // check null Auteur (Woorden)Boek
             try
             {
-                Woordenboek Woordenboek2 = new Woordenboek(new Genre { Leeftijd = 17 }, "jep", null, 250m, "een taal");
+                Woordenboek woordenboek3 = new Woordenboek(new Genre { Leeftijd = 17 }, "jep", null, 250m, "een taal");
             }
             catch (ArgumentException ex)
             {
